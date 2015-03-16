@@ -10,6 +10,7 @@ public final class Keyboard {
     private static final String TAG = Keyboard.class.getName();
 
     public final static boolean hideSoftInput(final View view) {
+        Log.d(TAG, "Attempting to hide soft keyboard input");
 
         if (null == view)
             return false;
@@ -17,7 +18,6 @@ public final class Keyboard {
         final Context context = view.getContext();
 
         if (null != context) {
-            Log.d(TAG, "Attempting to hide soft keyboard input");
             InputMethodManager manager = (InputMethodManager)context.getSystemService(Context.INPUT_METHOD_SERVICE);
             if (null != manager) {
                 return manager.hideSoftInputFromWindow(view.getWindowToken(), 0);

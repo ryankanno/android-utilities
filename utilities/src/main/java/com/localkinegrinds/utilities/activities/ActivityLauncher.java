@@ -8,19 +8,19 @@ import android.util.Log;
 public final class ActivityLauncher {
 
     private static final String TAG = ActivityLauncher.class.getName();
+
     private final Activity activity;
 
     public ActivityLauncher(Activity launcher) {
         this.activity = launcher;
     }
 
-    public void startActivity(final Intent intent)
-    {
+    public void startActivity(final Intent intent) {
         startActivity(intent, 0);
     }
 
     public void startActivity(final Intent intent, final int delayMillis) {
-        Log.v(TAG, "Calling startActivity on " + intent.toString() + " in " + delayMillis + " milliseconds");
+        Log.d(TAG, "Calling startActivity on " + intent.toString() + " in " + delayMillis + " milliseconds");
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
